@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2 if else</title>
+</head>
+<body>
+    <h2>Character Identification</h2>
+    <input type="text" id="charInput" maxlength="1" placeholder="Enter a character">
+    <button onclick="checkCharacter()">Check</button>
+    <p id="charResult"></p>
+
+    <script>
+        function checkCharacter() {
+            var char = document.getElementById('charInput').value;
+            var result = "";
+
+            if (char >= '0' && char <= '9') {
+                result = "The input is a number.";
+            } else if (char >= 'A' && char <= 'Z') {
+                result = "The input is an uppercase letter.";
+            } else if (char >= 'a' && char <= 'z') {
+                result = "The input is a lowercase letter.";
+            } else {
+                result = "The input is not a number or a letter.";
+            }
+
+            document.getElementById('charResult').innerText = result;
+        }
+    </script>
+    <br>
+    <button style="background-color: aquamarine; text-shadow: 16px; text-transform: lowercase;">
+        <a href="If 2.html"> integers./a>
+    </button>
+    <br>
+    <br>
+    <a href="ifele3.html">negative</a>
+    <br>
+    <br>
+    <a href="vowel.html">Vowel Carecter</a>
+    <br>
+    <br>
+    <a href="password.html">Password</a>
+    <br>
+    <br>
+    <a href="7.html">Time Conversion
+        </a>
+        <br>
+        <br>
+        <a href="Statement.html">Satement false</a>
+        <br>
+        <br>
+        <a href="greeting.html">Greeting</a>
+</body>
+
+</html>

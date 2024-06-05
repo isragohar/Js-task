@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alerts 2</title>
+    <script type="text/javascript">
+        function calculate() {
+            var a = 2, b = 1;
+            var result = --a - --b + ++b + b--;
+
+            // Display the results
+            document.getElementById("a").innerText = a;
+            document.getElementById("b").innerText = b;
+            document.getElementById("result").innerText = result;
+
+            // Step-by-step explanation
+            a = 2; b = 1; // reset
+            var step1 = --a;
+            a = 2; b = 1; // reset
+            var step2 = --a - --b;
+            a = 2; b = 1; // reset
+            var step3 = --a - --b + ++b;
+            a = 2; b = 1; // reset
+            var step4 = --a - --b + ++b + b--;
+
+            document.getElementById("step1").innerText = step1;
+            document.getElementById("step2").innerText = step2;
+            document.getElementById("step3").innerText = step3;
+            document.getElementById("step4").innerText = step4;
+        }
+    </script>
+</head>
+<body onload="calculate()">
+    <h1>Variable Output Explanation</h1>
+    <p>Value of a: <span id="a"></span></p>
+    <p>Value of b: <span id="b"></span></p>
+    <p>Result: <span id="result"></span></p>
+
+    <h2>Step-by-Step Explanation</h2>
+    <p>--a: <span id="step1"></span></p>
+    <p>--a - --b: <span id="step2"></span></p>
+    <p>--a - --b + ++b: <span id="step3"></span></p>
+    <p>--a - --b + ++b + b--: <span id="step4"></span></p>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Arrays and Loops Assignment</title>
+</head>
+<body>
+    <h1>JavaScript Arrays and Loops Assignment</h1>
+    <ul id="fruits-list"></ul>
+    <script>
+        // 1. Declare and initialize an empty multidimensional array.
+        let multiArray = [[]];
+        
+        // 2. Declare and initialize a multidimensional array representing the following matrix:
+        let matrix = [
+            [0, 1, 2, 3],
+            [1, 0, 1, 2],
+            [2, 1, 0, 1]
+        ];
+        document.write("<h2>Matrix:</h2>");
+        for (let i = 0; i < matrix.length; i++) {
+            document.write(matrix[i].join(" ") + "<br>");
+        }
+        
+        // 3. Write a program to print numeric counting from 1 to 10.
+        document.write("<h2>Numeric Counting from 1 to 10:</h2>");
+        for (let i = 1; i <= 10; i++) {
+            document.write(i + " ");
+        }
+        document.write("<br>");
+        
+        // 4. Write a program to print multiplication table of any number using for loop. Table number & length should be taken as an input from user.
+        let tableNumber = parseInt(prompt("Enter the table number:"));
+        let tableLength = parseInt(prompt("Enter the length of the table:"));
+        document.write(`<h2>Multiplication Table of ${tableNumber}:</h2>`);
+        for (let i = 1; i <= tableLength; i++) {
+            document.write(`${tableNumber} x ${i} = ${tableNumber * i}<br>`);
+        }
+        
+        // Array of fruits
+        let fruits = ["apple", "banana", "mango", "orange", "strawberry"];
+        
+        // Get the HTML element to display the list
+        let fruitsList = document.getElementById("fruits-list");
+        
+        // Loop through the fruits array and print each item
+        for (let i = 0; i < fruits.length; i++) {
+            // Create a list item for each fruit
+            let listItem = document.createElement("li");
+            // Set the text content to the fruit name
+            listItem.textContent = fruits[i];
+            // Append the list item to the fruits list
+            fruitsList.appendChild(listItem);
+        }
+        
+        // 6. Generate the following series in your browser.
+        document.write("<h2>Counting:</h2>");
+        for (let i = 1; i <= 15; i++) {
+            document.write(i + " ");
+        }
+        document.write("<br>");
+        
+        document.write("<h2>Reverse Counting:</h2>");
+        for (let i = 10; i >= 1; i--) {
+            document.write(i + " ");
+        }
+        document.write("<br>");
+        
+        document.write("<h2>Even:</h2>");
+        for (let i = 0; i <= 20; i += 2) {
+            document.write(i + " ");
+        }
+        document.write("<br>");
+        
+        document.write("<h2>Odd:</h2>");
+        for (let i = 1; i < 20; i += 2) {
+            document.write(i + " ");
+        }
+        document.write("<br>");
+        
+        document.write("<h2>Series:</h2>");
+        for (let i = 2; i <= 20; i += 2) {
+            document.write(i + "k ");
+        }
+        document.write("<br>");
+        
+        // 7. Enable “search by user input” in an array.
+        let items = ["cake", "apple pie", "cookie", "chips", "patties"];
+        let searchItem = prompt("Enter an item to search:");
+        if (items.includes(searchItem.toLowerCase())) {
+            alert(searchItem + " is found in the list.");
+        } else {
+            alert(searchItem + " is not found in the list.");
+        }
+        
+        // 8. Write a program to identify the largest number in the given array.
+        let numbers = [24, 53, 78, 91, 12];
+        let largestNumber = Math.max(...numbers);
+        document.write("<h2>Largest Number:</h2>" + largestNumber + "<br>");
+        
+        // 9. Write a program to identify the smallest number in the given array.
+        let smallestNumber = Math.min(...numbers);
+        document.write("<h2>Smallest Number:</h2>" + smallestNumber + "<br>");
+        
+        // 10. Write a program to print multiples of 5 ranging 1 to 100.
+        document.write("<h2>Multiples of 5 (1 to 100):</h2>");
+        for (let i = 5; i <= 100; i += 5) {
+            document.write(i + " ");
+        }
+        document.write("<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vowel Check</title>
+</head>
+<body>
+    <h2>Vowel Check</h2>
+    <input type="text" id="vowelInput" maxlength="1" placeholder="Enter a character">
+    <button onclick="checkVowel()">Check</button>
+    <p id="vowelResult"></p>
+
+    <script>
+        function checkVowel() {
+            var char = document.getElementById('vowelInput').value.toLowerCase();
+            var result = "";
+
+            if (char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u') {
+                result = "True, it is a vowel.";
+            } else {
+                result = "False, it is not a vowel.";
+            }
+
+            document.getElementById('vowelResult').innerText = result;
+        }
+    </script>
+</body>
+</html>

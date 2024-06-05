@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time Conversion</title>
+</head>
+<body>
+    <h2>Time Conversion</h2>
+    <input type="number" id="timeInput" placeholder="Enter time in 24-hour format (e.g., 1900)">
+    <button onclick="convertTime()">Convert</button>
+    <p id="timeResult"></p>
+
+    <script>
+        function convertTime() {
+            var time = parseInt(document.getElementById('timeInput').value);
+            var result = "";
+
+            if (time >= 0 && time < 1200) {
+                result = "Good morning";
+            } else if (time >= 1200 && time < 1700) {
+                result = "Good afternoon";
+            } else if (time >= 1700 && time < 2100) {
+                result = "Good evening";
+            } else if (time >= 2100 && time <= 2359) {
+                result = "Good night";
+            } else {
+                result = "Invalid time input";
+            }
+
+            document.getElementById('timeResult').innerText = result;
+        }
+    </script>
+</body>
+</html>

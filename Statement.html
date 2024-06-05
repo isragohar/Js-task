@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Converter</title>
+</head>
+<body>
+    <h1>24-Hour to 12-Hour Time Converter</h1>
+    <label for="timeInput">Enter time in 24-hour format (e.g., 1900 for 7pm):</label>
+    <input type="text" id="timeInput">
+    <button onclick="convertTime()">Convert</button>
+    <p id="result"></p>
+
+    <script>
+        function convertTime() {
+            // Get the time input from the user
+            let timeInput = document.getElementById('timeInput').value;
+            let resultElement = document.getElementById('result');
+
+            // Check if input is a valid number
+            if (isNaN(timeInput)) {
+                resultElement.textContent = "Invalid input! Please enter a valid number.";
+                return;
+            }
+
+            // Convert input to integer
+            let time = parseInt(timeInput);
+
+            // Validate input is within the 24-hour format range
+            if (time < 0 || time >= 2400 || time % 100 >= 60) {
+                resultElement.textContent = "Invalid time! Please enter a valid 24-hour format time.";
+            } else {
+                // Determine the hours and minutes
+                let hours = Math.floor(time / 100);
+                let minutes = time % 100;
+
+                // Determine AM or PM
+                let period = "AM";
+                if (hours >= 12) {
+                    period = "PM";
+                }
+
+                // Convert hours from 24-hour format to 12-hour format
+                if (hours > 12) {
+                    hours -= 12;
+                } else if (hours === 0) {
+                    hours = 12;
+                }
+
+                // Format minutes to always show two digits
+                let formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+
+                // Display the result
+                resultElement.textContent = `The time is ${hours}:${formattedMinutes} ${period}.`;
+            }
+        }
+    </script>
+</body>
+</html>
